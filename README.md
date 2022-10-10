@@ -16,7 +16,7 @@ velog 태그에 한계를 느껴 정리용으로 깃허브를 사용하기로 �
 ### Javascript
 
 - [옵셔널 체이닝, nullish 병합 연산자](./Javascript/optional%20chaining-nullish.md)
-- [객체리터럴](./Javascript/%EA%B0%9D%EC%B2%B4%EB%A6%AC%ED%84%B0%EB%9F%B4.md)
+- [객체리터럴](./Javascript/object.md)
 - [구조분해할당(디스트럭처링)](./Javascript/destructuring%20assignment.md)
 - [Promise](./Javascript/Promise.md)
 
