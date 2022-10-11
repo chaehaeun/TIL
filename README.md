@@ -20,6 +20,7 @@ https://velog.io/@chaehe_3210
 - [구조분해할당(디스트럭처링)](./Javascript/destructuring%20assignment.md)
 - [Promise](./Javascript/Promise.md)
 - [async & await](./Javascript/async-await.md)
+- [API와 API를 호출하는 fetch](./Javascript/api-fetch.md)
 
 ### HTML
 
