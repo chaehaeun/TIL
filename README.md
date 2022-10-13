@@ -19,7 +19,7 @@ https://velog.io/@chaehe_3210
 - [객체리터럴](./Javascript/object.md)
 - [구조분해할당(디스트럭처링)](./Javascript/destructuring%20assignment.md)
 - [Promise](./Javascript/Promise.md)
-- [async & await](./Javascript/async-await.md)
+- [async & await(나중에 보완할 것)](./Javascript/async-await.md)
 - [API와 API를 호출하는 fetch](./Javascript/api-fetch.md)
 
 ### HTML
@@ -33,3 +33,4 @@ https://velog.io/@chaehe_3210
 ### react
 
 - [React가 왜 필요할까](./react/why-react.md)
+- [JSX(나중에 보완할 것)](./react/jsx-%20caution.md)
