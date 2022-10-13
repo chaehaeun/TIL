@@ -31,3 +31,5 @@ https://velog.io/@chaehe_3210
 - [자바스크립트 런타임 환경(eventloop)](./web/javascript-runtime-environment.md)
 
 ### react
+
+- [React가 왜 필요할까](./react/why-react.md)
