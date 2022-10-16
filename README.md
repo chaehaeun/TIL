@@ -15,6 +15,8 @@ https://velog.io/@chaehe_3210
 
 ### Javascript
 
+- [실행 컨텍스트](./Javascript/ExecutionContext.md)
+- [렉시컬 환경](./Javascript/lexicalEnvironment.md)
 - [렉시컬 스코프와 클로저](./Javascript/lexicalscope-closure.md)
 - [옵셔널 체이닝, nullish 병합 연산자](./Javascript/optional%20chaining-nullish.md)
 - [객체리터럴](./Javascript/object.md)
