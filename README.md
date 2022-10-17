@@ -12,9 +12,11 @@ https://velog.io/@chaehe_3210
 - [CSS](#css)
 - [Web](#web)
 - [react](#react)
+- [Algorithm](#Algorithm)
 
 ### Javascript
 
+- [this(나중에 apply,call,bind 추가할 것)](./Javascript/this.md)
 - [실행 컨텍스트](./Javascript/ExecutionContext.md)
 - [렉시컬 환경](./Javascript/lexicalEnvironment.md)
 - [클로저](./Javascript/closure.md)
@@ -37,3 +39,9 @@ https://velog.io/@chaehe_3210
 
 - [React가 왜 필요할까](./react/why-react.md)
 - [JSX(나중에 보완할 것)](./react/jsx-%20caution.md)
+
+### Algorithm
+
+- [유클리드 호제법](./Algorithm/Euclidean-algorithm.md)
+- [소수 판별, 제곱근 구하기](./Algorithm/prime-number.md)
+- [약수의 개수가 홀수인지 짝수인지 파악하기](./Algorithm/divisor.md)
