@@ -45,6 +45,8 @@ https://velog.io/@chaehe_3210
 - [state 끌어올리기](./react/useState.md)
 - [useRef](./react/useRef.md)
 - [useEffect](./react/useEffect.md)
+- [useMemo](./react/useMemo.md)
+- [React.memo](./react/ReactMemo.md)
 
 ### Algorithm
 
