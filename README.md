@@ -47,6 +47,8 @@ https://velog.io/@chaehe_3210
 - [useEffect](./react/useEffect.md)
 - [useMemo](./react/useMemo.md)
 - [React.memo](./react/ReactMemo.md)
+- [useReducer](./react/useReducer.md)
+- [useContext](./react/useContext.md)
 
 ### Algorithm
 
