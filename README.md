@@ -41,6 +41,7 @@ https://velog.io/@chaehe_3210
 
 - [React가 왜 필요할까](./react/why-react.md)
 - [JSX(나중에 보완할 것)](./react/jsx-%20caution.md)
+- [Composition 컴포넌트](./react/composition.md)
 - [useState의 원리](./react/useState.md)
 - [state 끌어올리기](./react/useState.md)
 - [useRef](./react/useRef.md)
