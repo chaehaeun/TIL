@@ -49,3 +49,32 @@ useEffect(() => {
 ### cleanup 함수
 
 `useEffect`에서는 함수를 반환할 수 있는데, 이것을 `cleanup` 함수라고 부른다. cleanup 함수는 useEffect에 대한 뒷정리를 해주는 것이라고 생각하면 되는데, deps가 비어있는 경우에는 컴포넌트가 사라질 때 cleanup 함수가 호출된다.
+
++) useEffect()를 사용할 때 스테이트가 언마운트 될 때 cleanup 함수를 사용한다는 것은 알겠는데 이게 왜 필요한지는 모르는 상태였다.
+
+```js
+useEffect(() => {
+  const identifier = setTimeout(() => {
+    console.log("유효성 검사 중");
+    setFormIsValid(
+      enteredEmail.includes("@") && enteredPassword.trim().length > 6
+    );
+  }, 500);
+
+  return () => {
+    clearTimeout(identifier);
+  };
+}, [enteredEmail, enteredPassword]);
+```
+
+위의 예시에서 클린업 함수가 없다면, 셋타임아웃을 쓰더라도 함수 실행이 0.5초에 한번 씩 될 뿐이지, 결국 키를 누르는 만큼 함수가 실행된다.
+
+이런 상황에서 cleanup함수 영역에 타이머를 종료시키는 함수인 clearTimeout을 사용해서 identifier라는 비동기 함수를 종료시키면, 언마운트 되는 순간 함수를 지워버리기 때문에 클린업 함수가 실행되기 전에 예약된 타이머들은 실행되지 않는다.
+
+**즉 새로운 타이머를 설정하기 전에 마지막 타이머를 지워버린다.**
+
+![](https://velog.velcdn.com/images/chaehe_3210/post/1ed92398-de7d-43d3-bf24-1e7777868b7d/image.png)
+
+![](https://velog.velcdn.com/images/chaehe_3210/post/e89a2021-8039-4996-8161-49b7c743dc6b/image.png)
+
+인풋에 빠르게 타이핑을 해도(언마운트 되는 횟수는 콘솔에 찍힌 클린업 횟수를 보면 알 수 있다.) 유효성검사를 하는 identifier 함수는 0.5초에 한 번씩만 실행된 것을 알 수 있다!
