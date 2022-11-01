@@ -38,3 +38,63 @@ export default function DiaryList({ props }) {
   const diaryList = useContext(MyContext);
 }
 ```
+
+<br/>
+
+### +) 컨텍스트 활용이 가늠이 잘 안돼서 예시 코드를 더 가져와봤다
+
+```js
+import React from "react";
+
+const CartContext = React.createContext({
+  items: [],
+  totalAmount: 0,
+  addItem: (item) => {},
+  removeItem: (id) => {},
+  // 트리 안에서 적절한 프로바이더를 못 찾았을 때 쓰이는 값
+});
+
+export default CartContext;
+```
+
+- CartContext라는 이름의 컨텍스트를 생성한다. 이때 괄호 안의 배열은 트리 안에서 적절한 프로바이더를 못 찾았을 때 디폴트 값으로 쓰이는 것
+
+```js
+const cartContext = {
+  items: cartState.items,
+  totalAmount: cartState.totalAmount,
+  addItem: addItemToCartHandler,
+  removeItem: removeItemFromCartHandler,
+};
+
+return (
+  <CartContext.Provider value={cartContext}>
+    {props.children}
+  </CartContext.Provider>
+);
+// 여기서 cartState는 코드 상단에 선언해놓은 useReducer 스테이트임
+```
+
+- 컨텍스트를 활용할 부모 컴포넌트에 CartContext.Provider로 감싸준다.(이 경우는 감싸는 용도의 컴포넌트를 따로 생성했기 때문에 내부엔 props.children이 들어있다.)
+- value 안에 전역으로 공급할 데이터를 프롭으로 넘긴다.(위 예시에서는 cartContext라는 객체를 생성해서 한 번에 데이터를 넘겼다.)
+- 🚨 위 예시 코드는 전역에서 필요한 코드와 스테이트를 앱이 아닌 컨텍스트라는 컴포넌트에서 지정했음. 앱 컴포넌트의 가독성을 높이기 위한 것으로 보인다.
+
+```js
+const cartCtx = useContext(CartContext);
+
+const numberOfCartItems = cartCtx.items.reduce((currentNumber, item) => {
+  return currentNumber + item.amount;
+}, 0);
+```
+
+- 자식 컴포넌트 내에서 useContext로 컨텍스트를 불러와서 사용한다! 끝!
+
+<br/>
+
+🚨 **리액트 컨텍스트는 스테이트 변경이 잦은 경우엔 적합하지 않다!**
+
+로그인 기능 같은 자주 바뀌지 않는 기능을 구현할 때는 쓰기 좋음!
+
+> <span style='color:#706efe;'>state가 자주 변경되어도 컨텍스트 기능을 쓰고 싶어!</span>
+
+이런 경우에 쓰는 게 리덕스
