@@ -17,7 +17,7 @@ https://velog.io/@chaehe_3210
 ### Javascript
 
 - [switch](./Javascript/switch.md)
-- [this(나중에 apply,call,bind 추가할 것)](./Javascript/this.md)
+- [this(나중에 apply,call 추가할 것)](./Javascript/this.md)
 - [실행 컨텍스트](./Javascript/ExecutionContext.md)
 - [렉시컬 환경](./Javascript/lexicalEnvironment.md)
 - [호이스팅](./Javascript/hoisting.md)

@@ -66,6 +66,8 @@ admin["f"](); // Admin (점과 대괄호는 동일하게 동작함)
 
 여러가지 함수 호출 방식에서 this 바인딩이 어떻게 결정되는지 조오오금 더 자세하게 알아보자!
 
+<br/>
+
 ### 메서드 호출
 
 위에서 기술했듯이 메서드 내부의 this는 메서드를 호출한 객체(caller)에 바인딩 된다.
@@ -157,6 +159,8 @@ group.showList();
 
 위의 예시에서 화살표 함수 대신 일반 function 함수를 사용했다면 에러가 발생했을 것이다.(this가 undefined기 때문)
 
+<br/>
+
 ### 생성자 함수 호출
 
 생성자 함수 내부의 this에는 생성자 함수가 (미래에) 생성할 인스턴스가 바인딩 된다.
@@ -176,3 +180,105 @@ const circle2 = new Circle(10);
 console.log(circle1.getDiameter()); // 10
 console.log(circle2.getDiameter()); // 20
 ```
+
+<br/>
+
+### bind()
+
+추가해야지 해야지 하고 있다가 영영 안할 것 같았던...bind 함수가 갑자기 인강에서 튀어나와서 개념 한 번 보고 가려고 한다.
+
+```js
+let boundFunc = func.bind(context);
+```
+
+함수를 사전에 구성할 수 있게 해주는 메서드. (즉시 호출되지는 않는다고 한다.)
+
+```js
+let user = {
+  firstName: "John",
+};
+
+function func() {
+  alert(this.firstName);
+}
+
+let funcUser = func.bind(user);
+funcUser(); // John
+```
+
+boundFunc를 호출하면 this가 고정된 func를 호출하는 것과 동일한 효과이다. 실행이 예정된 함수에서 this 예약어를 사용하게 한다는 말... 혼란스러운 것을 보니 this가 헷갈리고 있는 것 같네 복습하러 가겠습니다.
+
+#### 부분 적용
+
+아래에 작성할 예시에 사용된 적용 방식이다.
+
+bind 함수는 this 뿐 아니라 **인수도 바인딩이 가능**하다.
+
+```js
+let bound = func.bind(context, [arg1], [arg2], ...);
+```
+
+```js
+function mul(a, b) {
+  return a * b;
+}
+
+let double = mul.bind(null, 2);
+
+alert(double(3)); // = mul(2, 3) = 6
+alert(double(4)); // = mul(2, 4) = 8
+alert(double(5)); // = mul(2, 5) = 10
+```
+
+mul.bind(null, 2)를 호출하면 새로운 함수 double이 만들어진다. double엔 컨텍스트가 null, 첫 번째 인수는 2인 mul의 호출 결과가 전달된다.** 추가 인수는 ‘그대로’ 전달됨.**
+
+잘 쓰이는 예시는 아니지만 알아두면 유용할 것 같다.
+
+👇 이제 강의 예시로 보겠음
+
+```js
+// 커스텀훅
+// .... sendTaskRequest 함수의 일부
+      applyData(data);
+    } catch (err) {
+      setError(err.message || "Something went wrong!");
+    }
+    setIsLoading(false);
+//
+
+
+// app.js
+const NewTask = (props) => {
+  const { isLoading, error, sendRequest: sendTaskRequest } = useHttp();
+
+  const createTask = (taskText, taskData) => {
+    const generatedId = taskData.name; // firebase-specific => "name" contains generated id
+    const createdTask = { id: generatedId, text: taskText };
+
+    props.onAddTask(createdTask);
+  };
+
+  const enterTaskHandler = async (taskText) => {
+    sendTaskRequest(
+      {
+        url: "https://httppractice-a67a8-default-rtdb.asia-southeast1.firebasedatabase.app/tasks.json",
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: { text: taskText },
+      },
+      createTask.bind(null, taskText)
+    );
+  };
+
+  return (
+    <Section>
+      <TaskForm onEnterTask={enterTaskHandler} loading={isLoading} />
+      {error && <p>{error}</p>}
+    </Section>
+  );
+};
+```
+
+createTask의 첫번째 인수를 인풋에서 받아온 taskText로 고정시키고, 실제로 호출된 커스텀훅에서 받아온 데이터는 createTask의 두번째 인수로 들어가진다.
