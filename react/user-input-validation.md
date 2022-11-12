@@ -166,3 +166,298 @@ const formSubmissionHandler = (e) => {
   setEnteredName("");
 };
 ```
+
+근데 이 방법은 사용자 경험 측면에선 별로 좋은 방식이 아닌 것 같음. 폼을 제출 전까지 유효한지 아닌지 알 수 없는 것은 좋은 서비스가 아님
+
+인풋을 작성하다가 포커스를 다른 곳으로 맞추었을 때 유효성 검사가 되는 게 낫지 않을까?
+
+<br/>
+
+### 포커스를 잃었을 때 인풋 유효성 검사
+
+#### 필드에서 포커스가 벗어났을 때 현재 인풋의 상태가 유효한지 검사하는 기능
+
+```js
+<input
+  value={enteredName}
+  type="text"
+  ref={nameInputRef}
+  id="name"
+  onChange={nameInputChangeHandler}
+  onBlur={nameInputBlurHandler}
+/>
+```
+
+포커스만 자주 봤지 blur 함수라는 것도 있는 줄은 최근에 알았다.
+**blur()** : 포커스를 잃을 때 발생하는 이벤트 메서드.
+
+> 포커스와 블러는 입력 필드 값 검증에 자주 사용되는 것 같다.
+
+```js
+const nameInputBlurHandler = (e) => {
+  setEnteredNameTouched(true);
+  if (enteredName.trim().length === 0) {
+    setEnteredNameIsValid(false);
+    return;
+  }
+};
+```
+
+인풋에서 포커스를 잃었다 = 입력 값에서 무언가를 한 뒤 빠져나왔다는 말
+이기 때문에, `enteredNameTouched`를 true로 변경 시켜준다. 그리고 이전에 사용되었던 유효성 검사를 다시 해준 후 유효하지 않는다면 에러메세지를 보이게 한다.
+
+#### 다시 인풋에 포커스를 맞추고 값을 입력했을 때 다시 유효성을 검사하는 기능
+
+```js
+const nameInputChangeHandler = (e) => {
+  setEnteredName(e.target.value);
+
+  if (e.target.value.trim().length !== 0) {
+    setEnteredNameIsValid(true);
+    // 0인지 아닌지를 판단해서 false로 바꾸는 게 아닌
+    // 길이가 0이 넘는지를 확인해서 최대한 빨리 true로 바꿔야 되는 것임
+  }
+};
+```
+
+false로 바꾸는 것이 아닌 true로 바꾸는 것이기 때문에 길이가 0이 넘으면 바로 true로 바꿔줬음 (유효한 값이 된다는 말임)
+
+> 🚨 이때 조건문 내의 밸류를 enteredName에서 e.target.value로 바꾼 이유 : enteredName은 현재의 최신의 값을 가지고 있지 않기 때문 (이전의 상태를 참조하기 때문임)
+
+<br/>
+
+#### 코드 리팩토링
+
+생각해보면, enteredNameIsValid 라는 스테이트가 필요하지 않다는 것을 알 수 있다.
+
+```js
+const enteredNameIsValid = enteredName.trim() !== "";
+// 유효할 때 true를 가리켜야 되므로 trim의 결과가 빈 값이 아닐 때 true로 설정
+```
+
+iuput 내부의 value는 enteredName 안의 값이 바뀔 때마다 유효성을 검증하기 때문에
+
+```js
+const nameInputChangeHandler = (e) => {
+  setEnteredName(e.target.value);
+};
+// 키 입력 때마다 유효성을 검증할 수 있는 이유
+```
+
+유효성을 판단하는 식의 결과 자체를 enteredNameIsValid 로 상수 지정을 해버리면, 자동으로 true 또는 false를 가리키게 된다.
+
+```js
+const nameInputChangeHandler = (e) => {
+  setEnteredName(e.target.value);
+
+  //  if (e.target.value.trim().length !== 0) {
+  //    setEnteredNameIsValid(true);
+  //  }
+};
+```
+
+이제 제출할 때의 유효성 검사를 제외하곤 검증 조건문을 다 지워도 된다!
+
+```js
+const formSubmissionHandler = (e) => {
+  e.preventDefault();
+  if (!enteredNameIsValid) {
+    return;
+  }
+
+  setEnteredNameTouched(true);
+  setEnteredName("");
+};
+```
+
+submit했을 때의 검증도 `enteredNameIsValid`이 false일 때만 리턴하면 되므로 !enteredNameIsValid 로 조건문을 써줬다. 코드가 조금 더 간결해졌당!
+
+<br/>
+
+### 동시에 여러 개의 인풋 유효성을 검사해야 될 때? 🤔
+
+전체 유효성을 검사할 때는
+
+```js
+  let formIsValid = false;
+
+  if (enteredNameIsValid && 그 외 같이 검사해야되는 값) {
+    formIsValid = true;
+  }
+```
+
+useState나 useEffect 같은 복잡한 거 쓸 필요 없고 간단한 조건문 쓰면 된다 😀
+이게 성능도 더 좋음!
+
+가끔 어려운 거 쓰면 더 있어보일 것 같다는 생각이 들곤 하는데 오히려 저런 베이직한 것들이 성능에도, 가독성에도 더 좋은 경우도 꽤 많으니 여러 상황을 고려해서 코드를 짜는 것이 좋겠다~
+
+#### 인풋이 여러 개일 때는??
+
+같은 로직을 반복해서 사용하는 것은 가독성을 죽여버리는 일이다. 커스텀 훅을 사용해서 효율적으로 코딩을 할 수 있는 방법을 알아보자.(내 머리로는 혼자서 못하겠어서 하드코딩한 후에 영상 봤다ㅋㅋㅋ...............ㅠ)
+
+👇 컴포넌트 코드
+
+```js
+import React from "react";
+import useInput from "../hooks/use-input";
+
+const SimpleInput = (props) => {
+  const {
+    value: enteredName,
+    isValid: enteredNameIsValid,
+    hasError: nameInputHasError,
+    valueChangeHandler: nameChangeHandler,
+    inputBlurHandler: nameBlurHandler,
+    reset: resetNameInput,
+  } = useInput((value) => value.trim() !== "");
+
+  const {
+    value: enteredEmail,
+    isValid: enteredEmailIsValid,
+    hasError: emailInputHasError,
+    valueChangeHandler: emailChangeHandler,
+    inputBlurHandler: emailBlurHandler,
+    reset: resetEmailInput,
+  } = useInput((value) => value.includes("@"));
+
+  let formIsValid = false;
+
+  if (enteredNameIsValid && enteredEmailIsValid) {
+    formIsValid = true;
+  }
+
+  const formSubmissionHandler = (e) => {
+    e.preventDefault();
+
+    if (!enteredNameIsValid && !enteredEmailIsValid) {
+      return;
+    }
+    resetNameInput();
+    resetEmailInput();
+  };
+
+  const nameInputClasses = nameInputHasError
+    ? "form-control invalid"
+    : "form-control";
+
+  const emailInputClasses = emailInputHasError
+    ? "form-control invalid"
+    : "form-control";
+
+  return (
+    <form onSubmit={formSubmissionHandler}>
+      <div className={nameInputClasses}>
+        <label htmlFor="name">Your Name</label>
+        <input
+          type="text"
+          id="name"
+          onChange={nameChangeHandler}
+          onBlur={nameBlurHandler}
+          value={enteredName}
+        />
+        {nameInputHasError && (
+          <p className="error-text">이름은 비워둘 수 없습니다.</p>
+        )}
+      </div>
+
+      <div className={emailInputClasses}>
+        <label htmlFor="email">Your Email</label>
+        <input
+          type="email"
+          id="email"
+          onChange={emailChangeHandler}
+          onBlur={emailBlurHandler}
+          value={enteredEmail}
+        />
+        {emailInputHasError && (
+          <p className="error-text">유효한 이메일이 아닙니다.</p>
+        )}
+      </div>
+
+      <div className="form-actions">
+        <button disabled={!formIsValid}>Submit</button>
+        {/* forIsValid가 false일 때 버튼을 비활성화 하기 */}
+      </div>
+    </form>
+  );
+};
+
+export default SimpleInput;
+```
+
+👇 커스텀훅 코드
+
+```js
+import { useState } from "react";
+
+const useInput = (validateValue) => {
+  const [enteredValue, setEnteredValue] = useState("");
+  const [isTouched, setIsTouched] = useState(false);
+
+  const valueIsValid = validateValue(enteredValue);
+  const hasError = !valueIsValid && isTouched;
+
+  const valueChangeHandler = (e) => {
+    setEnteredValue(e.target.value);
+  };
+
+  const inputBlurHandler = (e) => {
+    setIsTouched(true);
+  };
+
+  const reset = () => {
+    setEnteredValue("");
+    setIsTouched(false);
+  };
+
+  return {
+    value: enteredValue,
+    isValid: valueIsValid,
+    hasError,
+    valueChangeHandler,
+    inputBlurHandler,
+    reset,
+  };
+};
+
+export default useInput;
+```
+
+### 폼을 만드는데 유용한 서드파티 라이브러리 formik
+
+[formik](https://formik.org/)
+폼을 렌더링하고 더 복잡한 폼을 만들고 검증할 때는 매우 좋은 라이브러리라고 한다. 👍
+
+👇 사용방법
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import { Formik, Field, Form } from "formik";
+import "./styles.css";
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Contact Us</h1>
+      <Formik
+        initialValues={{ name: "", email: "" }}
+        onSubmit={async (values) => {
+          await new Promise((resolve) => setTimeout(resolve, 500));
+          alert(JSON.stringify(values, null, 2));
+        }}
+      >
+        <Form>
+          <Field name="name" type="text" />
+          <Field name="email" type="email" />
+          <button type="submit">Submit</button>
+        </Form>
+      </Formik>
+    </div>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById("root"));
+```
+
+검증 로직만 만들고 어떤 값을 입력 받을지 정하면 formik이 나머지는 다 해준다고 😋
