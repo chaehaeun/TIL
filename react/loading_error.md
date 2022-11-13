@@ -80,7 +80,7 @@ function App() {
 
       setMovies(transformedMovies);
     } catch (error) {
-      setError(error.message);
+      setError(error.message); // error 객체는 디폴트로 message 프로퍼티를 가지고 있다!!
     }
     setIsLoading(false);
     // 로딩메세지는 성공이든 에러이든 처리가 끝나면 없어져야 됨
