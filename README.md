@@ -30,6 +30,7 @@ https://velog.io/@chaehe_3210
 - [API와 API를 호출하는 fetch](./Javascript/api-fetch.md)
 - [단락평가](./Javascript/Short-circuit.md)
 - [padStart()](./Javascript/padStart.md)
+- [for ... in](./Javascript/for-in.md)
 
 ### HTML
 
