@@ -36,6 +36,8 @@ https://velog.io/@chaehe_3210
 
 ### CSS
 
+- [Prettier 특정 파일 예외 처리](./CSS/prettier-setting.md)
+
 ### Web
 
 - [자바스크립트 런타임 환경(eventloop)](./web/javascript-runtime-environment.md)
