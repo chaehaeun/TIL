@@ -16,6 +16,7 @@ https://velog.io/@chaehe_3210
 
 ### Javascript
 
+- [원시 타입과 참조 타입](./Javascript/immutable-mutable.md)
 - [switch](./Javascript/switch.md)
 - [this(나중에 apply,call 추가할 것)](./Javascript/this.md)
 - [실행 컨텍스트](./Javascript/ExecutionContext.md)
@@ -31,6 +32,7 @@ https://velog.io/@chaehe_3210
 - [단락평가](./Javascript/Short-circuit.md)
 - [padStart()](./Javascript/padStart.md)
 - [for ... in](./Javascript/for-in.md)
+- [undefined와 null](./Javascript/undefined-null.md)
 
 ### HTML
 
