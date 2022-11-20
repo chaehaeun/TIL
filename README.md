@@ -67,4 +67,5 @@ https://velog.io/@chaehe_3210
 
 - [유클리드 호제법](./Algorithm/Euclidean-algorithm.md)
 - [소수 판별, 제곱근 구하기](./Algorithm/prime-number.md)
+- [소수 / 에라토스테네스의 체](./Algorithm/Eratosthenes.md)
 - [약수의 개수가 홀수인지 짝수인지 파악하기](./Algorithm/divisor.md)
