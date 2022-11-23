@@ -69,3 +69,4 @@ https://velog.io/@chaehe_3210
 - [소수 판별, 제곱근 구하기](./Algorithm/prime-number.md)
 - [소수 / 에라토스테네스의 체](./Algorithm/Eratosthenes.md)
 - [약수의 개수가 홀수인지 짝수인지 파악하기](./Algorithm/divisor.md)
+- [약수의 개수 구하는 방법(n\*n)/프로그래머스 ](./Algorithm/knights.md)
