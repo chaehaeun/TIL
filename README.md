@@ -17,6 +17,8 @@ https://velog.io/@chaehe_3210
 ### Javascript
 
 - [원시 타입과 참조 타입](./Javascript/immutable-mutable.md)
+- [객체에 대한 속성과 메서드](./Javascript/object_detail.md)
+- [객체리터럴](./Javascript/object.md)
 - [switch](./Javascript/switch.md)
 - [this(나중에 apply,call 추가할 것)](./Javascript/this.md)
 - [실행 컨텍스트](./Javascript/ExecutionContext.md)
@@ -24,7 +26,7 @@ https://velog.io/@chaehe_3210
 - [호이스팅](./Javascript/hoisting.md)
 - [클로저](./Javascript/closure.md)
 - [옵셔널 체이닝, nullish 병합 연산자](./Javascript/optional%20chaining-nullish.md)
-- [객체리터럴](./Javascript/object.md)
+
 - [구조분해할당(디스트럭처링)](./Javascript/destructuring%20assignment.md)
 - [Promise](./Javascript/Promise.md)
 - [async & await(나중에 보완할 것)](./Javascript/async-await.md)
