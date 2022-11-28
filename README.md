@@ -5,14 +5,30 @@ velog 태그에 한계를 느껴 정리용으로 깃허브를 사용하기로 �
 https://velog.io/@chaehe_3210
 에 씁니다.
 
+<br/>
+
 ## 목차
 
-- [Javascript](#javascript)
 - [HTML](#html)
 - [CSS](#css)
 - [Web](#web)
-- [react](#react)
+- [Javascript](#javascript)
+- [React](#react)
+- [Typescript](#Typescript)
 - [Algorithm](#Algorithm)
+
+<br/>
+
+### HTML
+
+### CSS
+
+- [Prettier 특정 파일 예외 처리](./CSS/prettier-setting.md)
+- [같은 비율로 줄어드는 반응형 사각형](./CSS/responsive-square.md)
+
+### Web
+
+- [자바스크립트 런타임 환경(eventloop)](./web/javascript-runtime-environment.md)
 
 ### Javascript
 
@@ -35,16 +51,7 @@ https://velog.io/@chaehe_3210
 - [padStart()](./Javascript/padStart.md)
 - [for ... in](./Javascript/for-in.md)
 - [undefined와 null](./Javascript/undefined-null.md)
-
-### HTML
-
-### CSS
-
-- [Prettier 특정 파일 예외 처리](./CSS/prettier-setting.md)
-
-### Web
-
-- [자바스크립트 런타임 환경(eventloop)](./web/javascript-runtime-environment.md)
+- [charAt()](./Javascript/charAt.md)
 
 ### react
 
@@ -64,6 +71,8 @@ https://velog.io/@chaehe_3210
 - [api 데이터 받아오기, 로딩, 에러 처리](./react/loading_error.md)
 - [커스텀 훅](./react/customHook.md)
 - [인풋 유효성 검사에 대해](./react/user-input-validation.md)
+
+### Typescript
 
 ### Algorithm
 
