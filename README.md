@@ -26,12 +26,9 @@ https://velog.io/@chaehe_3210
 - [Prettier 특정 파일 예외 처리](./CSS/prettier-setting.md)
 - [같은 비율로 줄어드는 반응형 사각형](./CSS/responsive-square.md)
 
-### Web
-
-- [자바스크립트 런타임 환경(eventloop)](./web/javascript-runtime-environment.md)
-
 ### Javascript
 
+- [자바스크립트 런타임 환경(eventloop)](./Javascript/javascript-runtime-environment.md)
 - [원시 타입과 참조 타입](./Javascript/immutable-mutable.md)
 - [객체에 대한 속성과 메서드](./Javascript/object_detail.md)
 - [객체리터럴](./Javascript/object.md)
@@ -65,7 +62,7 @@ https://velog.io/@chaehe_3210
 - [useEffect](./react/useEffect.md)
 - [useMemo](./react/useMemo.md)
 - [React.memo](./react/ReactMemo.md)
-- [useCallback]()
+- [useCallback](./react/useCallback.md)
 - [useReducer](./react/useReducer.md)
 - [useContext](./react/useContext.md)
 - [api 데이터 받아오기, 로딩, 에러 처리](./react/loading_error.md)
@@ -81,3 +78,7 @@ https://velog.io/@chaehe_3210
 - [소수 / 에라토스테네스의 체](./Algorithm/Eratosthenes.md)
 - [약수의 개수가 홀수인지 짝수인지 파악하기](./Algorithm/divisor.md)
 - [약수의 개수 구하는 방법(n\*n)/프로그래머스 ](./Algorithm/knights.md)
+
+### Etc
+
+- [주로 사용하는 CLI,git 명령어](./ETC/cli.md)
