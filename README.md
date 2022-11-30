@@ -11,15 +11,21 @@ https://velog.io/@chaehe_3210
 
 - [HTML](#html)
 - [CSS](#css)
-- [Web](#web)
 - [Javascript](#javascript)
 - [React](#react)
 - [Typescript](#Typescript)
 - [Algorithm](#Algorithm)
+- [ETC](#Etc)
 
 <br/>
 
 ### HTML
+
+- [웹 표준, 웹 접근성]()
+- [description list ( dl )](./HTML/description_list.md)
+- [인용문 요소( q, blockquote, cite )](./HTML/quotation.md)
+- [어휘에 사용 되는 요소들( strong, em, b, i )](./HTML/emphasis.md)
+- [구획 요소( article, aside )](./HTML/compartment.md)
 
 ### CSS
 
@@ -82,3 +88,5 @@ https://velog.io/@chaehe_3210
 ### Etc
 
 - [주로 사용하는 CLI,git 명령어](./ETC/cli.md)
+- [git 관련 도움되는 링크](./ETC/assist_git.md)
+- [github 다른 사람 파일 가져오는 방법 두 가지(degit / clone)]()
