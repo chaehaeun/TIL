@@ -3,6 +3,7 @@
 ### Context API
 
 ![](https://velog.velcdn.com/images/chaehe_3210/post/d05e75ac-40da-46e9-81a2-c333cc8e4f24/image.png)
+
 이전에 코드를 작성하면서 전역적으로 함수를 넘기기 위해 이 함수를 사용하지도 않는 컴포넌트에도 프롭으로 넘겼다. 이것을 props drilling(굉장히 비효율적이라는 뜻!!)라고 한다.
 
 이를 해결하기 위해서 context 라는 개념이 생겼는데,

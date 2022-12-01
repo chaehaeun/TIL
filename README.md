@@ -21,7 +21,7 @@ https://velog.io/@chaehe_3210
 
 ### HTML
 
-- [웹 표준, 웹 접근성]()
+- [웹 표준, 웹 접근성](./HTML/web-standard.md)
 - [description list ( dl )](./HTML/description_list.md)
 - [인용문 요소( q, blockquote, cite )](./HTML/quotation.md)
 - [어휘에 사용 되는 요소들( strong, em, b, i )](./HTML/emphasis.md)
@@ -31,6 +31,8 @@ https://velog.io/@chaehe_3210
 
 - [Prettier 특정 파일 예외 처리](./CSS/prettier-setting.md)
 - [같은 비율로 줄어드는 반응형 사각형](./CSS/responsive-square.md)
+- [float](./CSS/float.md)
+- [grid](./CSS/grid.md)
 
 ### Javascript
 
@@ -45,7 +47,6 @@ https://velog.io/@chaehe_3210
 - [호이스팅](./Javascript/hoisting.md)
 - [클로저](./Javascript/closure.md)
 - [옵셔널 체이닝, nullish 병합 연산자](./Javascript/optional%20chaining-nullish.md)
-
 - [구조분해할당(디스트럭처링)](./Javascript/destructuring%20assignment.md)
 - [Promise](./Javascript/Promise.md)
 - [async & await(나중에 보완할 것)](./Javascript/async-await.md)
@@ -63,8 +64,8 @@ https://velog.io/@chaehe_3210
 - [Composition 컴포넌트](./react/composition.md)
 - [useState의 원리](./react/useState.md)
 - [state 끌어올리기](./react/useState.md)
-- [useRef](./react/useRef.md)
-- [제어컴포넌트와 비제어 컴포넌트]()
+- [useRef](./react/useRef_ReactForwardRef.md)
+- [제어컴포넌트와 비제어 컴포넌트](./react/controlledComponent.md)
 - [useEffect](./react/useEffect.md)
 - [useMemo](./react/useMemo.md)
 - [React.memo](./react/ReactMemo.md)
@@ -88,5 +89,5 @@ https://velog.io/@chaehe_3210
 ### Etc
 
 - [주로 사용하는 CLI,git 명령어](./ETC/cli.md)
-- [git 관련 도움되는 링크](./ETC/assist_git.md)
-- [github 다른 사람 파일 가져오는 방법 두 가지(degit / clone)]()
+- [git 관련 도움되는 링크 모음](./ETC/assist_git.md)
+- [github 다른 사람 파일 가져오는 방법 두 가지(degit / clone)](./ETC/copy-git-repo.md)
