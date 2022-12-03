@@ -274,4 +274,18 @@ git config --global core.autocrlf input
 
 15. `git pull` : 리모트의 내용을 로컬에 반영 `(fetch + merge)`
 
++)
+
+### git branch 스왑
+
+```
+$ git branch < 현재 어떤 브랜치가 있는지 확인
+
+$ git switch main < 그냥 스왑할 때만 사용
+
+$ git branch -d flex < flex라는 브랜치를 삭제하겠다는 말
+
+$ git checkout -b flex < 플렉스라는 브랜치를 만들면서 바로 브랜치 스왑
+```
+
 </details>
