@@ -77,6 +77,10 @@ https://velog.io/@chaehe_3210
 - [커스텀 훅](./react/customHook.md)
 - [인풋 유효성 검사에 대해](./react/user-input-validation.md)
 
+<br/>
+
+- [redux 찍먹](./react/redux-basic.md)
+
 ### Typescript
 
 ### Algorithm
