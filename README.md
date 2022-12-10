@@ -26,7 +26,12 @@ https://velog.io/@chaehe_3210
 - [description list ( dl )](./HTML/description_list.md)
 - [인용문 요소( q, blockquote, cite )](./HTML/quotation.md)
 - [어휘에 사용 되는 요소들( strong, em, b, i )](./HTML/emphasis.md)
-- [구획 요소( article, aside )](./HTML/compartment.md)
+- [구획 요소( section, article, aside )](./HTML/compartment.md)
+- [텍스트 요소( sup, sub, abbr, s, mark, small, address, pre )](./HTML/text-level.md)
+- [임베디드 요소( picture, track )](./HTML/embedded.md)
+- [fieldset / legend](./HTML/fieldset-legend.md)
+- [hgroup 그리고 h ( 부제.무지성 h태그 사용 멈춰...!! )](./HTML/h.md)
+- [br 과 반응형]()
 
 ### CSS
 
@@ -34,6 +39,9 @@ https://velog.io/@chaehe_3210
 - [같은 비율로 줄어드는 반응형 사각형](./CSS/responsive-square.md)
 - [float](./CSS/float.md)
 - [grid](./CSS/grid.md)
+- [숨김 텍스트](./CSS/hide-text.md)
+- [전체 선택자 관련](./CSS/Universal-selectors.md)
+-
 
 ### Javascript
 
@@ -57,6 +65,7 @@ https://velog.io/@chaehe_3210
 - [for ... in](./Javascript/for-in.md)
 - [undefined와 null](./Javascript/undefined-null.md)
 - [charAt()](./Javascript/charAt.md)
+- [반복문으로 객체 생성하기](./Javascript/createObj.md)
 
 ### react
 
@@ -97,3 +106,4 @@ https://velog.io/@chaehe_3210
 - [git 관련 도움되는 링크 모음](./ETC/assist_git.md)
 - [github 다른 사람 파일 가져오는 방법 두 가지(degit / clone)](./ETC/copy-git-repo.md)
 - [vscode emmet 단축키(수시로 업뎃 예정)](./ETC/vsShortCut.md)
+- [i18n? L10n?](./ETC/i18n.md)
