@@ -48,7 +48,6 @@ https://velog.io/@chaehe_3210
 - [자바스크립트 런타임 환경(eventloop)](./Javascript/javascript-runtime-environment.md)
 - [원시 타입과 참조 타입](./Javascript/immutable-mutable.md)
 - [객체에 대한 속성과 메서드](./Javascript/object_detail.md)
-- [객체리터럴](./Javascript/object.md)
 - [switch](./Javascript/switch.md)
 - [this(나중에 apply,call 추가할 것)](./Javascript/this.md)
 - [실행 컨텍스트](./Javascript/ExecutionContext.md)
@@ -89,6 +88,7 @@ https://velog.io/@chaehe_3210
 <br/>
 
 - [redux 찍먹](./react/redux-basic.md)
+- [redux toolkit 작성 흐름](./react/write-rtk.md)
 
 ### Typescript
 
