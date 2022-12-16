@@ -1,4 +1,4 @@
-# TIL
+# 📚 TIL
 
 velog 태그에 한계를 느껴 정리용으로 깃허브를 사용하기로 했습니다. </br>
 배운 것들 정리합니다. 러프하게 적은 TIL(라고 쓰고 일기라고 읽는다)은 </br>
@@ -7,10 +7,11 @@ https://velog.io/@chaehe_3210
 
 <br/>
 
-## 목차
+## 💡 목차
 
 - [HTML](#html)
 - [CSS](#css)
+- [web-A11y](#web-A11y)
 - [Javascript](#javascript)
 - [React](#react)
 - [Typescript](#Typescript)
@@ -19,10 +20,8 @@ https://velog.io/@chaehe_3210
 
 <br/>
 
-### HTML
+### 📌 HTML
 
-- [웹 표준, 웹 접근성](./HTML/web-standard.md)
-- [웹 접근성을 고려한 마크업(수시로 업데이트 할 것)](./HTML/accessibility.md)
 - [description list ( dl )](./HTML/description_list.md)
 - [인용문 요소( q, blockquote, cite )](./HTML/quotation.md)
 - [어휘에 사용 되는 요소들( strong, em, b, i )](./HTML/emphasis.md)
@@ -33,7 +32,7 @@ https://velog.io/@chaehe_3210
 - [hgroup 그리고 h ( 부제.무지성 h태그 사용 멈춰...!! )](./HTML/h.md)
 - [br 과 반응형](./HTML/br.md)
 
-### CSS
+### 📌 CSS
 
 - [Prettier 특정 파일 예외 처리](./CSS/prettier-setting.md)
 - [같은 비율로 줄어드는 반응형 사각형](./CSS/responsive-square.md)
@@ -45,7 +44,14 @@ https://velog.io/@chaehe_3210
 - [성능을 고려한 반응형 css](./CSS/responsive.md)
 - [고해상도 디바이스를 위한 css](./CSS/for-high-resolution-css.md)
 
-### Javascript
+### 📌 web-A11y
+
+- [웹 표준, 웹 접근성](./HTML/web-standard.md)
+- [웹 접근성을 고려한 마크업(수시로 업데이트 할 것)](./HTML/accessibility.md)
+- [i18n? L10n?](./ETC/i18n.md)
+- [device-dependent event handler](./a11y/device-dependent%20event%20handler.md)
+
+### 📌 Javascript
 
 - [자바스크립트 런타임 환경(eventloop)](./Javascript/javascript-runtime-environment.md)
 - [원시 타입과 참조 타입](./Javascript/immutable-mutable.md)
@@ -68,7 +74,7 @@ https://velog.io/@chaehe_3210
 - [charAt()](./Javascript/charAt.md)
 - [반복문으로 객체 생성하기](./Javascript/createObj.md)
 
-### react
+### 📌 react
 
 - [React가 왜 필요할까](./react/why-react.md)
 - [JSX(나중에 보완할 것)](./react/jsx-%20caution.md)
@@ -92,9 +98,9 @@ https://velog.io/@chaehe_3210
 - [redux 찍먹](./react/redux-basic.md)
 - [redux toolkit 작성 흐름](./react/write-rtk.md)
 
-### Typescript
+### 📌 Typescript
 
-### Algorithm
+### 📌 Algorithm
 
 - [유클리드 호제법](./Algorithm/Euclidean-algorithm.md)
 - [소수 판별, 제곱근 구하기](./Algorithm/prime-number.md)
@@ -102,10 +108,9 @@ https://velog.io/@chaehe_3210
 - [약수의 개수가 홀수인지 짝수인지 파악하기](./Algorithm/divisor.md)
 - [약수의 개수 구하는 방법(n\*n)/프로그래머스 ](./Algorithm/knights.md)
 
-### Etc
+### 📌 Etc
 
 - [주로 사용하는 CLI,git 명령어](./ETC/cli.md)
 - [git 관련 도움되는 링크 모음](./ETC/assist_git.md)
 - [github 다른 사람 파일 가져오는 방법 두 가지(degit / clone)](./ETC/copy-git-repo.md)
 - [vscode emmet 단축키(수시로 업뎃 예정)](./ETC/vsShortCut.md)
-- [i18n? L10n?](./ETC/i18n.md)
