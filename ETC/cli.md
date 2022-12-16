@@ -332,4 +332,10 @@ $ git commit --amend
 
 작성하면 힌트 창 뜰거고, 수정할 메세지 적으면 됨
 
+### 🎇 add와 커밋을 동시에
+
+```bash
+$git commit -am
+```
+
 </details>

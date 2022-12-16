@@ -31,7 +31,7 @@ https://velog.io/@chaehe_3210
 - [임베디드 요소( picture, track )](./HTML/embedded.md)
 - [fieldset / legend](./HTML/fieldset-legend.md)
 - [hgroup 그리고 h ( 부제.무지성 h태그 사용 멈춰...!! )](./HTML/h.md)
-- [br 과 반응형]()
+- [br 과 반응형](./HTML/br.md)
 
 ### CSS
 
@@ -41,7 +41,9 @@ https://velog.io/@chaehe_3210
 - [grid](./CSS/grid.md)
 - [숨김 텍스트](./CSS/hide-text.md)
 - [전체 선택자 관련](./CSS/Universal-selectors.md)
--
+- [css넘버링](./CSS/numbering.md)
+- [성능을 고려한 반응형 css](./CSS/responsive.md)
+- [고해상도 디바이스를 위한 css](./CSS/for-high-resolution-css.md)
 
 ### Javascript
 
