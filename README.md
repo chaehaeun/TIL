@@ -102,6 +102,7 @@ https://velog.io/@chaehe_3210
 
 ### 📌 Algorithm
 
+- [알고리즘 문제 접근 방법 / 리팩토링](./Algorithm/how-to-approach-problem.md)
 - [유클리드 호제법](./Algorithm/Euclidean-algorithm.md)
 - [소수 판별, 제곱근 구하기](./Algorithm/prime-number.md)
 - [소수 / 에라토스테네스의 체](./Algorithm/Eratosthenes.md)
