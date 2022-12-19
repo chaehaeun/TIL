@@ -9,14 +9,14 @@ https://velog.io/@chaehe_3210
 
 ## 💡 목차
 
-- [HTML](#html)
-- [CSS](#css)
-- [web-A11y](#web-A11y)
-- [Javascript](#javascript)
-- [React](#react)
-- [Typescript](#Typescript)
-- [Algorithm](#Algorithm)
-- [ETC](#Etc)
+- [HTML](#-html)
+- [CSS](#-css)
+- [web-A11y](#-web-a11y)
+- [Javascript](#-javascript)
+- [React](#-react)
+- [Typescript](#-typescript)
+- [Algorithm](#-algorithm)
+- [ETC](#-etc)
 
 <br/>
 
