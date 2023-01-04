@@ -57,7 +57,7 @@ https://velog.io/@chaehe_3210
 - [원시 타입과 참조 타입](./Javascript/immutable-mutable.md)
 - [객체에 대한 속성과 메서드](./Javascript/object_detail.md)
 - [switch](./Javascript/switch.md)
-- [this(나중에 apply,call 추가할 것)](./Javascript/this.md)
+- [this(apply,call,bind)](./Javascript/this.md)
 - [실행 컨텍스트](./Javascript/ExecutionContext.md)
 - [렉시컬 환경](./Javascript/lexicalEnvironment.md)
 - [호이스팅](./Javascript/hoisting.md)
@@ -103,6 +103,7 @@ https://velog.io/@chaehe_3210
 ### 📌 Algorithm
 
 - [알고리즘 문제 접근 방법 / 리팩토링](./Algorithm/how-to-approach-problem.md)
+- [알고리즘 문제 해결 패턴 - 빈도 수 세기](./Algorithm/frequency.md)
 - [유클리드 호제법](./Algorithm/Euclidean-algorithm.md)
 - [소수 판별, 제곱근 구하기](./Algorithm/prime-number.md)
 - [소수 / 에라토스테네스의 체](./Algorithm/Eratosthenes.md)

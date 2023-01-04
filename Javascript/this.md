@@ -2,7 +2,7 @@
 
 this 는 자신이 속한 객체 또는 자신이 생성할 인스턴스를 가리키는 자기 참조 변수다. <br/> this를 통해 자신이 속한 객체 또는 자신이 생성할 인스턴스의 프로퍼티나 메서드를 참조할 수 있다.
 
-### 자유로운 this
+### 🎇 자유로운 this
 
 다른 언어를 사용하다 자바스크립트로 넘어온 개발자는 this는 항상 메서드가 정의된 객체를 참조할 것이라고 생각하기 쉽다. <br/>
 하지만 자바스크립트에서의 `this`는 런타임에 따라 결정된다.<br/>
@@ -68,7 +68,7 @@ admin["f"](); // Admin (점과 대괄호는 동일하게 동작함)
 
 <br/>
 
-### 메서드 호출
+### 🎇 메서드 호출
 
 위에서 기술했듯이 메서드 내부의 this는 메서드를 호출한 객체(caller)에 바인딩 된다.
 
@@ -119,7 +119,7 @@ console.log(getName()); // ' '
 
 <br/>
 
-### 화살표 함수
+### 🎇 화살표 함수
 
 화살표 함수는 일반 함수와 달리 고유한 `this`를 가지지 않는다. 화살표 함수에서 `this`를 참조하면, 화살표 함수가 아닌 외부 함수에서 `this`값을 가져온다.<br/>
 다른 말로, 화살표 함수 안의 `this`는 동적으로 정해지지 않는다는 것이다.
@@ -183,7 +183,7 @@ console.log(circle2.getDiameter()); // 20
 
 <br/>
 
-### bind()
+### 🎇 bind()
 
 추가해야지 해야지 하고 있다가 영영 안할 것 같았던...bind 함수가 갑자기 인강에서 튀어나와서 개념 한 번 보고 가려고 한다.
 
@@ -282,3 +282,46 @@ const NewTask = (props) => {
 ```
 
 createTask의 첫번째 인수를 인풋에서 받아온 taskText로 고정시키고, 실제로 호출된 커스텀훅에서 받아온 데이터는 createTask의 두번째 인수로 들어가진다.
+
+<br/>
+
+### 🎇 call()
+
+call 메서드는 호출 주체인 함수를 즉시 실행하게하는 명령어. 함수를 호출하면서 첫 번째 인수로 전달한 객체를 함수의 this에 바인딩한다!
+
+```js
+func.call(context, arg1, arg2, ...)
+```
+
+예에제로 넘어가보면,
+
+```js
+const javaScript = {
+  name: "자바스크립트",
+};
+Object.prototype.hasOwnProperty.call(javaScript, "name");
+```
+
+1. `Object.prototype.hasOwnProperty` : object가 가진 hasOwnProperty 메소드를 호출
+2. `call(javaScript,'name')` : has어쩌고 함수가 가리키는 대상은 javascript라는 객체이고, **has어쩌고 함수에는 'name'이라는 문자열을 인수로 넘기겠다.**
+
+<br/>
+
+### 🎇 apply()
+
+apply 메서드는 call과 동일하게 호출 주체인 함수를 즉시 실행하게하는 명령어.
+
+```js
+func.apply(context, args);
+```
+
+apply는 func의 this를 context로 고정해주고, 유사 배열 객체인 args를 인수로 사용할 수 있게 해준다.
+
+<br/>
+
+> **🚨 call()과 apply()은 거의 동일하게 작동하지만, call이 복수 인수를 따로따로 받는 대신 apply는 인수를 유사 배열 객체로 받는다는 점이 중요한 차이!!**
+
+```js
+func.call(context, ...args); // 전개 문법을 사용해 인수가 담긴 배열을 전달하는 것과
+func.apply(context, args); // call을 사용하는 것은 동일
+```
